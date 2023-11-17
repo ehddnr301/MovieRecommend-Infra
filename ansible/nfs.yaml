@@ -27,6 +27,12 @@
         state: directory
         mode: '0777'
 
+    - name: Create /home/{{ ansible_user }}/minio directory
+      file:
+        path: /home/{{ ansible_user }}/minio/test
+        state: directory
+        mode: '0777'
+
     - name: Install nfs-kernel-server
       apt:
         name: nfs-kernel-server
@@ -37,6 +43,13 @@
       lineinfile:
         path: /etc/exports
         line: "/home/{{ ansible_user }}/logs *(rw,sync,no_subtree_check)"
+        state: present
+
+    - name: Add export configuration
+      become: true
+      lineinfile:
+        path: /etc/exports
+        line: "/home/{{ ansible_user }}/minio *(rw,sync,no_subtree_check)"
         state: present
 
     - name: Restart nfs-kernel-server
