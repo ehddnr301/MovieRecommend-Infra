@@ -9,5 +9,5 @@
 
 ## 세팅 현황
 
-- GCP e2-medium (vCPU:2, Memory:4GB)
+- GCP e2-standard-2 (vCPU:2, Memory:8GB)
 - K8s
