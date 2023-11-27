@@ -25,6 +25,7 @@
 ## Command
 
 - `ansible-playbook -i hosts initial.yaml`
+- `ansible-playbook -i hosts nfs.yaml`
 - `ansible-playbook -i hosts kube-dependencies.yaml`
 - `ansible-playbook -i hosts master.yaml`
 - `ansible-playbook -i hosts workers.yaml`
